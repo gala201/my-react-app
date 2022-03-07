@@ -56,6 +56,14 @@ function App() {
 
   const cars = ["BMW", "Opel", "Toyota"]
 
+  const kandidat = {
+    ime: "Pero Perić",
+    html: false,
+    js: true,
+    experience: 1.5,
+    it: false
+  }
+
   return (
     <>
       {/* <div className="App" style={{ borderColor: "blue", order: 1, backgroundColor: "red" }}>
@@ -64,6 +72,9 @@ function App() {
         </header>
       </div> */}
       <div>
+
+
+
         {/* ako zna vise od 5 zivotinja */}
 
         {
@@ -118,6 +129,53 @@ function App() {
         {noviElement} blab <br />
         {`${prviString} ${drugiString}`} <br />
         {printuser(korisnici.name, korisnici.prezime)}
+
+
+        <h1>Kandidat za FE developera</h1>
+        <h2>HTML</h2>
+
+        {
+          kandidat.html ?
+            <>
+              <h2>Zna HTML</h2>
+
+              {
+                kandidat.js ?
+                  <>
+                    <h3>Zna JS</h3>
+
+                    {
+                      kandidat.experience >= 2 ?
+                        <h4>Ima barem dvije god iskustva</h4>
+                        :
+                        <>
+                          <h4>Nema barem dvije god iskustva</h4>
+                          <h5>3200 moja zadnja ponuda</h5>
+                        </>
+                    }
+                  </>
+                  :
+                  <h3>Ne zna JS</h3>
+              }
+            </>
+            :
+            <>
+              <h2>Ne zna HTML</h2>
+              {
+                kandidat.it ?
+                  <>
+                    <h3>Ides u drugi krug</h3>
+                    <h3>ZNa</h3>
+                  </>
+                  :
+                  <>
+                    <h3>Ides u bazu</h3>
+                    <h3>Ne zna</h3>
+                  </>
+              }
+            </>
+        }
+
       </div>
     </>
   );
