@@ -66,6 +66,20 @@ function App() {
 
   const brojevi = [3, 5, 7]
 
+
+
+  function myAnotherHeading() {
+    return (
+      <h1>Moj drugi naslov</h1>
+    )
+  }
+
+  function myComponentHeading() {
+    return (
+      <h1>Ovo je komponenta za moj naslov</h1>
+    )
+  }
+
   return (
     <>
       {/* <div className="App" style={{ borderColor: "blue", order: 1, backgroundColor: "red" }}>
@@ -178,9 +192,10 @@ function App() {
             </>
         }
 
+        {/* https://github.com/webdev199 */}
+
         {
           brojevi[0] > brojevi[1] ?
-
             <h2>Prvi broj je veci</h2>
             :
             <>
@@ -194,6 +209,9 @@ function App() {
             </>
         }
 
+
+
+        {<myComponentHeading />}
       </div>
     </>
   );
