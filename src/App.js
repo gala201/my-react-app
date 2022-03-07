@@ -64,6 +64,8 @@ function App() {
     it: false
   }
 
+  const brojevi = [3, 5, 7]
+
   return (
     <>
       {/* <div className="App" style={{ borderColor: "blue", order: 1, backgroundColor: "red" }}>
@@ -172,6 +174,22 @@ function App() {
                     <h3>Ides u bazu</h3>
                     <h3>Ne zna</h3>
                   </>
+              }
+            </>
+        }
+
+        {
+          brojevi[0] > brojevi[1] ?
+
+            <h2>Prvi broj je veci</h2>
+            :
+            <>
+              <h2>Drugi broj je veci</h2>
+              {
+                brojevi[1] > brojevi[2] ?
+                  <h3>Drugi broj je najveci</h3>
+                  :
+                  <h3>Treci broj je najveci</h3>
               }
             </>
         }
