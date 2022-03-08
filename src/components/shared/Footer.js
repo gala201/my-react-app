@@ -1,6 +1,12 @@
+import FooterCopyright from "./FooterCopyright"
+import FooterLinks from "./FooterLinks"
+
 function Footer() {
     return (
-        <p>footer</p>
+        <div className="footer">
+            <FooterCopyright />
+            <FooterLinks />
+        </div>
     )
 }
 

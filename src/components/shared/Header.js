@@ -1,8 +1,16 @@
+import ArticleImage from "../items/ArticleImage"
+import ArticleTitle from "../items/ArticleTitle"
+import MovieArticle from "../items/MovieArticle"
+import NavigationLink from "../items/NavigationLink"
+
+
 function Header() {
     return (
         <header>
-            <p className="naslov">MY WATCHLIST</p>
-            <nav>
+            <div className="naslov">
+                <a href="" className="logo">MY WATCHLIST</a>
+            </div>
+            <nav className="navigation">
                 <ul>
                     <li>
                         <a href="">All movies</a>
@@ -16,6 +24,12 @@ function Header() {
                     <li>
                         <a href="">Search</a>
                     </li>
+                    <li>
+                        <NavigationLink />
+                    </li>
+
+
+
                 </ul>
             </nav>
         </header>
