@@ -1,5 +1,6 @@
 import ArticleImage from "./ArticleImage";
 import ArticleTitle from "./ArticleTitle";
+import Heart from "./HeartRed"
 
 
 export default function MovieArticle(props) {
@@ -9,6 +10,7 @@ export default function MovieArticle(props) {
     return (
         <div className="movie-article">
             <ArticleImage />
+            <Heart />
             <ArticleTitle movieName={props.movieName} />
             <div>{props.year}</div>
             {props.isWatched !== undefined &&
@@ -17,6 +19,7 @@ export default function MovieArticle(props) {
                 :
                 <span>Nije pogledao</span>
             }
+
         </div>
     )
 }

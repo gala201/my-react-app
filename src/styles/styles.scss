@@ -3,7 +3,7 @@ body{
 }
 
 .naslov{
-    font-family: Lato;
+    
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -29,7 +29,7 @@ body{
         list-style-type: none;
         padding-left: 0;
         display: flex;
-        justify-items: center;
+        justify-content: center;
         li{
             display: flex;
             align-items: center;
@@ -63,11 +63,22 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
 
         img{
             margin-left: 70px;
             margin-right: 70px;
             margin-top: 17px;
+        }
+        .heart{
+            position: absolute;
+            top: 0px;
+            left: 85px;
+        
+        }
+
+        span{
+            margin-bottom: 24px;
         }
     }
 }

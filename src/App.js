@@ -5,6 +5,7 @@ import Footer from './components/shared/Footer';
 import Index from './components/views/Index';
 import Favorites from './components/views/Favorites';
 import './styles/styles.css'
+import Playground from './components/playground/Playground';
 // webdev199
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
   return (
     <>
       <Header />
+      <Playground />
       {/* <Index /> */}
-      <Favorites />
-      <Footer />
+      {/* <Favorites /> */}
+      {/* <Footer /> */}
     </>
   );
 }

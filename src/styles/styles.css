@@ -1,5 +1,4 @@
 .naslov {
-  font-family: Lato;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -28,7 +27,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .navigation ul li {
@@ -79,11 +80,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .movies .movie-article img {
   margin-left: 70px;
   margin-right: 70px;
   margin-top: 17px;
+}
+
+.movies .movie-article .heart {
+  position: absolute;
+  top: 0px;
+  left: 85px;
+}
+
+.movies .movie-article span {
+  margin-bottom: 24px;
 }
 /*# sourceMappingURL=styles.css.map */

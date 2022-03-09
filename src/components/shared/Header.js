@@ -2,9 +2,32 @@ import ArticleImage from "../items/ArticleImage"
 import ArticleTitle from "../items/ArticleTitle"
 import MovieArticle from "../items/MovieArticle"
 import NavigationLink from "../items/NavigationLink"
+import NavLink from "./NavLink"
+
+ 
 
 
 function Header() {
+
+    const links = [
+        {
+            linkName: "All movies",
+            isActive: true
+        },
+        {
+            linkName: "Favorites",
+            isActive: false
+        },
+        {
+            linkName: "Add",
+            isActive: false
+        },
+        {
+            linkName: "Search",
+            isActive: false
+        }
+    ]
+
     return (
         <header>
             <div className="naslov">
@@ -12,24 +35,10 @@ function Header() {
             </div>
             <nav className="navigation">
                 <ul>
-                    <li>
-                        <a href="">All movies</a>
-                    </li>
-                    <li>
-                        <a href="">Favorites</a>
-                    </li>
-                    <li>
-                        <a href="">Add</a>
-                    </li>
-                    <li>
-                        <a href="">Search</a>
-                    </li>
-                    <li>
-                        <NavigationLink />
-                    </li>
-
-
-
+                    <NavLink linkName={links[0].linkName} isActive={links[0].isActive}/>
+                    <NavLink linkName={links[1].linkName} isActive={links[1].isActive}/>
+                    <NavLink linkName={links[2].linkName} isActive={links[2].isActive}/>
+                    <NavLink linkName={links[3].linkName} isActive={links[3].isActive}/>
                 </ul>
             </nav>
         </header>
