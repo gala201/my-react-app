@@ -6,22 +6,26 @@ function Favorites() {
         {
             name: "LOTR",
             year: 2000,
-            isWatched: true
+            isWatched: true,
+            key: 21
         },
         {
             name: "Snatch",
             year: 1997,
-            isWatched: false
+            isWatched: false,
+            key: 24
         },
         {
             name: "Lock, Stock",
             year: 1991,
-            isWatched: true
+            isWatched: true,
+            key: 52
         },
         {
             name: "Django",
             year: 2005,
-            isWatched: false
+            isWatched: false,
+            key: 98
         }
     ]
 
@@ -30,10 +34,15 @@ function Favorites() {
 
 
             <MovieArticle movieName={moviesArray[0].name} year={moviesArray[0].year} isWatched={moviesArray[0].isWatched} />
-            <MovieArticle movieName={moviesArray[1].name} year={moviesArray[1].year} isWatched={moviesArray[1].isWatched} />
-            <MovieArticle movieName={moviesArray[2].name} year={moviesArray[2].year} isWatched={moviesArray[2].isWatched} />
-            <MovieArticle movieName={moviesArray[3].name} year={moviesArray[3].year} isWatched={moviesArray[3].isWatched} />
 
+            {
+                moviesArray.map(v =>
+                    <MovieArticle
+                        movieName={v.name}
+                        year={v.year}
+                        isWatched={v.isWatched}
+                        key={v.key} />)
+            }
 
         </div>
     )

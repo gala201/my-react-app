@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import DriversLicence from "./DriversLicence"
 import Sandbox from "./Sandbox"
 import TotalPrice from "./Sandbox"
 
@@ -33,8 +34,7 @@ export default function Playground() {
 
 
 
-    console.log(product.name);
-    console.log(product["name"]);
+        ;
 
 
     const handleUpdate = (e) => {
@@ -69,9 +69,37 @@ export default function Playground() {
 
     }
 
+    const [category, setCategory] = useState([])
+    const [disableBtn, setDisableBtn] = useState(true)
+
+    const handleSizes = (item) => {
+        console.log(item);
+
+        if (!category.includes(item)) {
+            setCategory(prevValues => [...prevValues, item])
+        }
+        else {
+            const newArray = category.filter(v => v !== item)
+
+            setCategory(newArray)
+        }
+
+
+    }
+
+    const [isShow, setIsShow] = useState(true)
+
+    useEffect(() => {
+        console.log("Mijenjam kategorije");
+    }, [vozac])
+
 
     return (
         <>
+
+
+
+
             <h1>My Playground</h1>
 
             {/*
@@ -104,16 +132,20 @@ export default function Playground() {
             <button onClick={() => setCounter(Math.max(1, counter - 1))}>Umanji</button>
 
             <hr />
-            <div>
-                <span>{vozac.ime}</span><br />
-                <span>{vozac.prezime}</span><br />
-                <span>{vozac.adresa}</span>
-            </div><hr />
-            <div>
-                <input type="text" value={vozac.ime} name="ime" onChange={(e) => updateId(e)} /> <br />
-                <input type="text" value={vozac.prezime} name="prezime" onChange={(e) => updateId(e)} /> <br />
-                <input type="text" value={vozac.adresa} name="adresa" onChange={(e) => updateId(e)} />
-            </div>
+            <button onClick={() => setIsShow(!isShow)}>Sakrij</button>
+            <hr />
+
+            {
+                isShow && <DriversLicence
+                    vozac={vozac}
+                    category={category}
+                    handleSizes={handleSizes}
+                    updateId={updateId}
+                />
+            }
+
+
+
             <Sandbox
                 price={donutPrice}
                 quantity={counter}

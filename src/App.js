@@ -18,9 +18,9 @@ function App() {
   return (
     <>
       <Header />
-      <Playground />
+      {/* <Playground /> */}
       {/* <Index /> */}
-      {/* <Favorites /> */}
+      <Favorites />
       {/* <Footer /> */}
     </>
   );
