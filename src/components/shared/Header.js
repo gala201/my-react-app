@@ -4,7 +4,7 @@ import MovieArticle from "../items/MovieArticle"
 import NavigationLink from "../items/NavigationLink"
 import NavLink from "./NavLink"
 
- 
+
 
 
 function Header() {
@@ -35,10 +35,16 @@ function Header() {
             </div>
             <nav className="navigation">
                 <ul>
-                    <NavLink linkName={links[0].linkName} isActive={links[0].isActive}/>
-                    <NavLink linkName={links[1].linkName} isActive={links[1].isActive}/>
-                    <NavLink linkName={links[2].linkName} isActive={links[2].isActive}/>
-                    <NavLink linkName={links[3].linkName} isActive={links[3].isActive}/>
+                    {
+                        links.map((v, i) => {
+                            return (
+                                <li key={i}>
+                                    <NavLink linkName={v.linkName} isActive={v.isActive} />
+                                </li>
+                            )
+                        })
+                    }
+
                 </ul>
             </nav>
         </header>
