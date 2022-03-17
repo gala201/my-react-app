@@ -4,7 +4,7 @@ function DriversLicence(props) {
 
     useEffect(() => {
 
-        alert("Vozacka se ucitala")
+
 
     }, [])
 

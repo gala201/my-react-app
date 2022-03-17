@@ -1,39 +1,63 @@
 import MovieArticle from "../items/MovieArticle"
 
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
 function Index() {
 
     const moviesArray = [
         {
             name: "LOTR",
-            year: 2000
+            year: 2000,
+            id: 98
         },
         {
             name: "Snatch",
-            year: 1997
+            year: 1997,
+            id: 45
         },
         {
             name: "Lock, Stock",
-            year: 1991
+            year: 1991,
+            id: 22
         },
         {
             name: "Django",
-            year: 2005
+            year: 2005,
+            id: 10
         }
     ]
 
     return (
-        <div className="movies">
-            <MovieArticle movieName="Batman" year="2020" />
-            <MovieArticle movieName="Superman" year="2010" />
-            <MovieArticle movieName="Snatch" year="2000" />
+        <Grid
 
-            <MovieArticle movieName={moviesArray[0].name} year={moviesArray[0].year} />
-            <MovieArticle movieName={moviesArray[1].name} year={moviesArray[1].year} />
-            <MovieArticle movieName={moviesArray[2].name} year={moviesArray[2].year} />
-            <MovieArticle movieName={moviesArray[3].name} year={moviesArray[3].year} />
+            container
+            width={768}
+            spacing={2}
+            display="flex"
+            margin="auto"
+        >
 
 
-        </div>
+
+
+
+            {
+                moviesArray.map(v => {
+                    return (
+                        <Grid item xs>
+                            <MovieArticle key={v.id} id={v.id} movieName={v.name} year={v.year} />
+                        </Grid>
+                    )
+                })
+            }
+
+
+
+
+        </Grid>
     )
 }
 

@@ -54,7 +54,7 @@
   display: block;
 }
 
-.movies {
+/* .movies {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +63,7 @@
   width: 768px;
   margin: 0 auto;
 }
-
+ */
 .movies .movie-article {
   margin: 23px;
   border: 2px solid #C4C4C4;

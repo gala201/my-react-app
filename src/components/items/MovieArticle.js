@@ -3,9 +3,22 @@ import ArticleTitle from "./ArticleTitle";
 import Heart from "./HeartRed"
 import { ThemeContext } from "../../App";
 import { useContext } from "react";
+import { Avatar, Card, CardHeader } from "@mui/material";
+import { styled } from '@mui/material/styles';
 
 
-export default function MovieArticle(props) {
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { red } from '@mui/material/colors';
+
+
+
+export default function MovieArticle({ isWatched, id, movieName, year }) {
 
 
 
@@ -18,19 +31,54 @@ export default function MovieArticle(props) {
     }
 
     return (
-        <div className="movie-article" style={theme ? darkStyle : {}}>
-            <ArticleImage />
-            <Heart />
-            <ArticleTitle movieName={props.movieName} />
-            <div>{props.year}</div>
-            {
-                props.isWatched !== undefined &&
-                    props.isWatched ?
-                    <span>Je pogledao</span>
-                    :
-                    <span>Nije pogledao</span>
-            }
+        /*         <div className="movie-article" style={theme ? darkStyle : {}}>
+                    <ArticleImage />
+                    <Heart />
+                    <ArticleTitle id={id} movieName={movieName} />
+                    <div>{year}</div>
+                    {
+                        isWatched !== undefined &&
+                            isWatched ?
+                            <span>Je pogledao</span>
+                            :
+                            <span>Nije pogledao</span>
+                    }
+        
+                </div> */
 
-        </div>
+        <Card sx={{ maxWidth: 345 }} sx={{ maxHeight: 500 }}>
+            <CardHeader
+                avatar={
+
+                    <Heart />
+
+                }
+                title={<ArticleTitle id={id} movieName={movieName} />} />
+            <CardMedia
+                component="img"
+                width="100%"
+                src="../../assets/movieIcon.svg"
+                alt=""
+
+            />
+            <ArticleImage justifySelf="center" />
+            <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                    <div>{year}</div>
+                    {
+                        isWatched !== undefined &&
+                            isWatched ?
+                            <span>Je pogledao</span>
+                            :
+                            <span>Nije pogledao</span>
+                    }
+                </Typography>
+            </CardContent>
+
+
+
+
+
+        </Card>
     )
 }

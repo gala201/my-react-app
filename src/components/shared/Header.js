@@ -7,24 +7,29 @@ import NavLink from "./NavLink"
 
 
 
+
 function Header() {
 
     const links = [
         {
+            url: "/",
             linkName: "All movies",
+            isActive: false
+        },
+        {
+            url: "/favorites",
+            linkName: "Favorites",
             isActive: true
         },
         {
-            linkName: "Favorites",
-            isActive: false
-        },
-        {
+            url: "/add",
             linkName: "Add",
-            isActive: false
+            isActive: true
         },
         {
+            url: "/search",
             linkName: "Search",
-            isActive: false
+            isActive: true
         }
     ]
 
@@ -39,7 +44,7 @@ function Header() {
                         links.map((v, i) => {
                             return (
                                 <li key={i}>
-                                    <NavLink linkName={v.linkName} isActive={v.isActive} />
+                                    <NavLink linkName={v.linkName} isActive={v.isActive} url={v.url} />
                                 </li>
                             )
                         })

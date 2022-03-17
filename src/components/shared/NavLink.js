@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom"
+
 function NavLink(props) {
-    return(
+
+    let isActive = props.isActive
+
+    return (
         <li>
-            <a href="" style={{fontWeight: "700", color: `${props.isActive ? "#27295A" : "#676767"}`} }>{props.linkName}</a>           
+            <Link to={props.url} style={{ fontWeight: `${isActive ? 'bold' : 'normal'}`, color: `${props.isActive ? "#27295A" : "#676767"}` }}>{props.linkName}
+            </Link>
         </li>
     )
 

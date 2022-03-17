@@ -33,7 +33,7 @@ function Favorites() {
         <div className="movies">
 
 
-            <MovieArticle movieName={moviesArray[0].name} year={moviesArray[0].year} isWatched={moviesArray[0].isWatched} />
+
 
             {
                 moviesArray.map((v, i) =>

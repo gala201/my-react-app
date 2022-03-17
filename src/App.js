@@ -9,8 +9,13 @@ import Playground from './components/playground/Playground';
 import { useState } from 'react';
 import React from 'react';
 import HOCs from "./components/playground/HOCs";
+import Search from "./components/views/Search"
+import Add from "./components/views/Add"
+import MovieDetails from "./components/views/MovieDetails"
+
 
 import Button from '@mui/material/Button';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 export const ThemeContext = React.createContext()
 // webdev199
 
@@ -29,20 +34,33 @@ function App() {
 
 
   return (
-    <ThemeContext.Provider value={isThemeDark}>
-      <>
+    <Router>
+      <ThemeContext.Provider value={isThemeDark}>
+
         <Button onClick={handleClick} variant="contained">Promijeni temu u {isThemeDark ? "Tamnu" : "Svijetlu"}</Button>
 
+
         <Header />
-        {/* <Playground /> */}
-        {/* <Index /> */}
+
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/playground" element={<Playground />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/detalji/:id" element={<MovieDetails />} />
+          <Route path="/hocs" element={<HOCs />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+
+
+        {/* <Playground />
+        <Index />
         <HOCs />
-        {/* <Favorites /> */}
-        {/* <Footer /> */}
+        <Favorites />
+        <Footer /> */}
 
-
-      </>
-    </ThemeContext.Provider>
+      </ThemeContext.Provider>
+    </Router>
   );
 }
 
