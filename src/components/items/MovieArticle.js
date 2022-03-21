@@ -18,7 +18,7 @@ import { red } from '@mui/material/colors';
 
 
 
-export default function MovieArticle({ isWatched, id, movieName, year }) {
+export default function MovieArticle({ isWatched, id, movieName, year, poster }) {
 
 
 
@@ -61,7 +61,7 @@ export default function MovieArticle({ isWatched, id, movieName, year }) {
                 alt=""
 
             />
-            <ArticleImage justifySelf="center" />
+            <ArticleImage poster={poster} />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
                     <div>{year}</div>

@@ -1,9 +1,9 @@
 import movieIcon from '../../assets/movieIcon.svg'
 
-function ArticleImage() {
+function ArticleImage({ poster }) {
 
     return (
-        <img src={movieIcon} alt="" />
+        <img src={poster} alt="" />
     )
 
 }
