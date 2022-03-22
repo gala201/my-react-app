@@ -6,7 +6,7 @@ function Search() {
 
 
 
-    const [showSpinner, setShowSpinner] = useState(false)
+    const [showSpinner, setShowSpinner] = useState(true)
     const [results, setResults] = useState([])
 
     // input za kljucnu rijec za pretragu, pored napraviti button na koji saljemo request sa kljucnom rijeci
@@ -26,7 +26,7 @@ function Search() {
 
             .then(parsedResult => {
 
-                setShowSpinner(true)
+
 
                 setTimeout(() => {
 
