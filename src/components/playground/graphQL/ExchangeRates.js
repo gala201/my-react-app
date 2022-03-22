@@ -22,10 +22,6 @@ const ExchangeRates = () => {
 
 
 
-
-
-
-
     //napraviti 3 buttona sa valutama: HRK, EUR, BAM
 
     return (

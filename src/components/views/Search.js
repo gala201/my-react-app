@@ -5,15 +5,12 @@ import MovieArticle from "../items/MovieArticle";
 function Search() {
 
 
-
     const [showSpinner, setShowSpinner] = useState(false)
     const [results, setResults] = useState([])
 
     // input za kljucnu rijec za pretragu, pored napraviti button na koji saljemo request sa kljucnom rijeci
 
     const [searchInput, setSearchInput] = useState("")
-
-
 
 
     const handleSearch = () => {
@@ -41,11 +38,6 @@ function Search() {
 
             })
     }
-
-
-
-
-
 
 
     return (

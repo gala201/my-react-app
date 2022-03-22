@@ -14,9 +14,14 @@ import Add from "./components/views/Add"
 import MovieDetails from "./components/views/MovieDetails"
 
 
+
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppWrap from './components/playground/graphQL/AppWrap';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+
 export const ThemeContext = React.createContext()
 // webdev199
 
@@ -36,7 +41,8 @@ function App() {
 
   return (
     <Router>
-      <ThemeContext.Provider value={isThemeDark}>
+      {/* <ThemeContext.Provider value={isThemeDark}> */}
+      <Provider store={store}>
 
         <Button onClick={handleClick} variant="contained">Promijeni temu u {isThemeDark ? "Tamnu" : "Svijetlu"}</Button>
 
@@ -52,16 +58,17 @@ function App() {
           <Route path="/add" element={<Add />} />
           <Route path="/search" element={<Search />} />
           <Route path="/valute" element={<AppWrap />} />
+          <Route path="/counter" element={<Counter />} />
         </Routes>
 
 
         {/* <Playground />
-        <Index />
-        <HOCs />
-        <Favorites />
-        <Footer /> */}
-
-      </ThemeContext.Provider>
+          <Index />
+          <HOCs />
+          <Favorites />
+          <Footer /> */}
+      </Provider>
+      {/* </ThemeContext.Provider> */}
     </Router>
   );
 }
