@@ -16,6 +16,7 @@ import MovieDetails from "./components/views/MovieDetails"
 
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AppWrap from './components/playground/graphQL/AppWrap';
 export const ThemeContext = React.createContext()
 // webdev199
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/hocs" element={<HOCs />} />
           <Route path="/add" element={<Add />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/valute" element={<AppWrap />} />
         </Routes>
 
 

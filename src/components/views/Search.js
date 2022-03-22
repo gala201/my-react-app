@@ -52,7 +52,7 @@ function Search() {
         <>
             <h1>Pretraži</h1>
             <div>
-                <input type="search" name="Search" id="Search" placeholder="batman" onChange={(e) => setSearchInput(e.target.value)} value={searchInput} />
+                <input type="search" name="Search" id="Search" onChange={(e) => setSearchInput(e.target.value)} value={searchInput} />
                 <button onClick={handleSearch}>Search</button>
             </div>
             <h1>Rezultati</h1>
