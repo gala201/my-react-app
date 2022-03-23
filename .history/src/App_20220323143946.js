@@ -17,10 +17,9 @@ import MovieDetails from "./components/views/MovieDetails"
 
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppWrap from './components/playground/graphql/AppWrap';
+import AppWrap from './components/playground/graphQL/AppWrap';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import Counter from './components/playground/Counter';
 
 
 export const ThemeContext = React.createContext()
