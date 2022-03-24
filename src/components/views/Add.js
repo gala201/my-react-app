@@ -1,22 +1,27 @@
 import { Button, FormControlLabel, FormGroup, Switch, TextField } from "@mui/material"
 import { width } from "@mui/system"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { useState } from "react"
 import MovieArticle from "../items/MovieArticle"
 import { v4 as uuidv4 } from 'uuid';
+import { MoviesContext } from "../../App"
 
 
 
 function Add() {
 
-    const [myMovies, setMyMovies] = useState([])
+
     const [movie, setMovie] = useState({
         name: "",
         year: "",
         details: "",
         favorite: false,
-        id: uuidv4()
+        id: uuidv4(),
+        isWatched: false,
+        rating: null
     })
+
+    const { myMovies, setMyMovies } = useContext(MoviesContext)
 
     const updateMovie = (e) => {
         const value = e.target.value
@@ -60,11 +65,7 @@ function Add() {
     }, [myMovies])
 
 
-    const handleDelete = (id) => {
-        console.log(id);
 
-        setMyMovies(myMovies.filter(v => v.id !== id))
-    }
 
 
     return (
@@ -90,11 +91,11 @@ function Add() {
 
             <hr />
             {
-                myMovies.map((v, i) => {
+                myMovies?.map((v, i) => {
                     return (
                         <>
-                            <MovieArticle movieName={v.name} year={v.year} isWatched={v.favorite} />
-                            <button onClick={() => handleDelete(v.id)}>X</button>
+                            <MovieArticle id={v.id} movieName={v.name} year={v.year} isWatched={v.isWatched} isFavorite={v.isFavorite} />
+
 
                         </>
 

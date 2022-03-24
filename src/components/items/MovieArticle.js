@@ -15,20 +15,27 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
+import { MoviesContext } from "../../App";
 
 
 
 export default function MovieArticle({ isWatched, id, movieName, year, poster }) {
 
 
-
-    const theme = useContext(ThemeContext)
-    console.log(theme);
-
-    const darkStyle = {
-        backgroundColor: "black",
-        color: "white"
+    const { myMovies, setMyMovies } = useContext(MoviesContext)
+    const handleDelete = (id) => {
+        setMyMovies(myMovies.filter(v => v.id !== id))
     }
+
+    /*     const handleWatched = (id) => {
+    
+            const helperArray = [...myMovies]
+            const referentObject = helperArray.find(v => v.id === id)
+    
+            referentObject.isWatched = !referentObject.isWatched
+    
+            setMyMovies(helperArray)
+        } */
 
     return (
         /*         <div className="movie-article" style={theme ? darkStyle : {}}>
@@ -46,13 +53,19 @@ export default function MovieArticle({ isWatched, id, movieName, year, poster })
         
                 </div> */
 
-        <Card sx={{ maxWidth: 345 }} sx={{ maxHeight: 500 }}>
+        <Card sx={{ maxWidth: 345 }} sx={{ maxHeight: 500 }} style={{ height: "100%" }}>
+            <button onClick={() => handleDelete(id)}>X</button>
+            {
+                !isWatched && <button>Oznaci kao pogledano</button>
+            }
+
             <CardHeader
                 avatar={
 
                     <Heart />
 
                 }
+
                 title={<ArticleTitle id={id} movieName={movieName} />} />
             <CardMedia
                 component="img"
@@ -76,9 +89,6 @@ export default function MovieArticle({ isWatched, id, movieName, year, poster })
             </CardContent>
 
 
-
-
-
-        </Card>
+        </Card >
     )
 }
